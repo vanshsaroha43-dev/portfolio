@@ -28,16 +28,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-}
-
-a {
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
 /* =============================== HEADER =============================== */
@@ -47,7 +43,7 @@ header {
     padding: 25px 0;
     text-align: center;
     border-bottom: 2px solid var(--primary-gold);
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .logo h1 {
@@ -108,17 +104,18 @@ form::after {
 
 label {
     display: block;
-    color: var(--primary-gold);
-    font-family: 'Cinzel', serif;
+    color: var(--primary-gold) !important;
+    font-family: 'Cinzel', serif !important;
     font-size: 0.95rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     margin-bottom: 10px;
+    text-transform: uppercase;
     transition: 0.3s;
 }
 
 label:hover {
-    text-shadow: 0 0 8px var(--primary-gold);
-    color: var(--accent-gold);
+    text-shadow: 0 0 10px var(--primary-gold);
+    color: var(--accent-gold) !important;
 }
 
 input[type="text"],
@@ -147,7 +144,7 @@ input[type="password"]:focus {
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover {
-    border-color: #555555;
+    border-color: var(--primary-gold);
 }
 
 input::placeholder {
@@ -159,7 +156,6 @@ input::placeholder {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset !important;
     -webkit-text-fill-color: var(--text-light) !important;
-    border: 1px solid var(--primary-gold) !important;
 }
 
 /* =============================== SUBMIT BUTTON =============================== */
@@ -199,37 +195,13 @@ input:-webkit-autofill {
 .submit:hover {
     background: var(--primary-gold);
     color: #000000;
-    box-shadow: 0 0 30px rgba(197, 160, 89, 0.5),
-                inset 0 0 20px rgba(255,255,255,0.2);
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.5);
     transform: translateY(-3px);
     letter-spacing: 4px;
 }
 
 .submit:active {
     transform: translateY(0);
-    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
-}
-
-/* =============================== DECORATIVE ELEMENTS =============================== */
-form::before {
-    animation: borderGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes borderGlow {
-    0% {
-        opacity: 0.3;
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        opacity: 0.8;
-        filter: hue-rotate(20deg);
-    }
-}
-
-/* =============================== FOOTER AREA (Bottom spacing) =============================== */
-body::after {
-    content: '';
-    flex: 1;
 }
 
 /* =============================== RESPONSIVE =============================== */
@@ -252,5 +224,9 @@ body::after {
     .submit {
         padding: 15px 20px;
         font-size: 1rem;
+    }
+    
+    label {
+        font-size: 0.85rem;
     }
 }
