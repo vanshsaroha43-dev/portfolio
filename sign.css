@@ -1,0 +1,256 @@
+/* --- FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+/* --- VARIABLES --- */
+:root {
+    --primary-red: #580808;
+    --primary-gold: #C5A059;
+    --accent-gold: #D4AF37;
+    --bg-dark: #0a0a0a;
+    --bg-card: #151515;
+    --text-light: #F5F5F5;
+    --text-dim: #999999;
+}
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-dark);
+    background-image: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* =============================== HEADER =============================== */
+header {
+    width: 100%;
+    background: linear-gradient(to bottom, #000000, rgba(0,0,0,0.9));
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-gold);
+    margin-bottom: 50px;
+}
+
+.logo h1 {
+    color: var(--primary-gold);
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.logo:hover h1 {
+    text-shadow: 0 0 20px var(--primary-gold);
+    color: var(--accent-gold);
+}
+
+/* =============================== FORM =============================== */
+form {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 50px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-gold), var(--primary-red), var(--primary-gold));
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-red), var(--primary-gold), var(--primary-red));
+    border-radius: 10px 10px 0 0;
+}
+
+/* =============================== INPUT FIELDS =============================== */
+.name, .email, .pass, .code {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: var(--primary-gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+label:hover {
+    text-shadow: 0 0 8px var(--primary-gold);
+    color: var(--accent-gold);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px 20px;
+    background: #0a0a0a;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+    background: #111111;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+    border-color: #555555;
+}
+
+input::placeholder {
+    color: #555555;
+    font-style: italic;
+}
+
+/* Remove autofill background */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset !important;
+    -webkit-text-fill-color: var(--text-light) !important;
+    border: 1px solid var(--primary-gold) !important;
+}
+
+/* =============================== SUBMIT BUTTON =============================== */
+.submit {
+    width: 100%;
+    padding: 18px 30px;
+    background: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
+    transition: 0.5s;
+}
+
+.submit:hover::before {
+    left: 100%;
+}
+
+.submit:hover {
+    background: var(--primary-gold);
+    color: #000000;
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.5),
+                inset 0 0 20px rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+    letter-spacing: 4px;
+}
+
+.submit:active {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+/* =============================== DECORATIVE ELEMENTS =============================== */
+form::before {
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% {
+        opacity: 0.3;
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        opacity: 0.8;
+        filter: hue-rotate(20deg);
+    }
+}
+
+/* =============================== FOOTER AREA (Bottom spacing) =============================== */
+body::after {
+    content: '';
+    flex: 1;
+}
+
+/* =============================== RESPONSIVE =============================== */
+@media (max-width: 500px) {
+    form {
+        padding: 30px 25px;
+        margin: 0 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px 15px;
+    }
+    
+    .submit {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
